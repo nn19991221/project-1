@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Contact Splashes Swim School – send us your questions and upload a child photo if needed."/>
+  <title>Contact | Splashes Swim School</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* 可移至 css/style.css */
+    .page-hero{
+      position:relative;min-height:40vh;background:url("images/hero-contact.jpg") center/cover no-repeat;color:#fff
+    }
+    .page-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+    .page-hero .container{position:relative;z-index:1}
+    .required::after{content:" *";color:#dc3545}
+    .hp-field{position:absolute;left:-5000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .card-shadow{box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Splashes Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn btn-primary ml-3" data-toggle="modal" data-target="#authModal">Register / Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="page-hero d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class="display-4 font-weight-bold">Contact Us</h1>
+      <p class="lead mb-0">Questions about classes, schedules, or enrollment? We’re here to help.</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Form -->
+        <div class="col-lg-7 mb-4">
+          <div class="card card-shadow">
+            <div class="card-body">
+              <h2 class="h4 mb-3">Send a Request</h2>
+              <p class="text-muted mb-4">Fill out the form below to contact us. You may also upload a photo of your child (optional) to help us assess the appropriate program level.</p>
+
+              <!-- 提示区 -->
+              <div id="formAlert" class="alert d-none" role="alert"></div>
+
+              <!-- 注意：若静态托管，可用 mailto 作为后备 -->
+              <form id="contactForm" enctype="multipart/form-data" novalidate>
+                <!-- 蜜罐 -->
+                <input type="text" class="hp-field" name="website" tabindex="-1" autocomplete="off"/>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label class="required" for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="required" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label class="required" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="(xxx) xxx-xxxx" required>
+                    <div class="invalid-feedback">Please enter your phone.</div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="hasFabric">Do you have fabric?</label>
+                    <select id="hasFabric" name="hasFabric" class="form-control">
+                      <option value="Unknown" selected>Not sure</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Enrollment / Schedule / Billing / Other">
+                </div>
+
+                <div class="form-group">
+                  <label class="required" for="message">Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="5" placeholder="Tell us about your child’s age/level, preferred days/times, and any questions." required></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="photo">Upload a photo (optional, JPG/PNG ≤ 5MB)</label>
+                  <input type="file" id="photo" name="photo" class="form-control-file" accept=".jpg,.jpeg,.png">
+                </div>
+
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="consent" required>
+                  <label class="form-check-label required" for="consent">I agree to the privacy policy.</label>
+                  <div class="invalid-feedback">Please accept the policy.</div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <button type="submit" class="btn btn-primary">Send Request</button>
+                  <a id="mailtoFallback" class="btn btn-link ml-2" href="#" style="display:none;">Use Email App</a>
+                </div>
+              </form>
+
+              <hr class="my-4">
+              <p class="small text-muted mb-0">* This form is set to submit via Ajax to <code>/api/contact</code> (requires backend support).If no backend is available, a “Use Email App” button will automatically appear to send the message via <code>mailto:</code>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info / Map / Hours -->
+        <div class="col-lg-5">
+          <div class="card mb-4 card-shadow">
+            <div class="card-body">
+              <h3 class="h5">Get in Touch</h3>
+              <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
+              <p class="mb-2"><strong>Email:</strong> hello@splashes.school</p>
+              <p class="mb-0"><strong>Address:</strong> 123 Aqua Lane, Irvine, CA</p>
+            </div>
+          </div>
+
+          <div class="card mb-4 card-shadow">
+            <div class="card-body p-0">
+              <!-- 替换为你的真实地图 iframe -->
+              <iframe
+                title="Splashes Location"
+                src="https://maps.google.com/maps?q=Irvine%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="260" frameborder="0" style="border:0;" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="card card-shadow">
+            <div class="card-body">
+              <h3 class="h5 mb-3">Office Hours</h3>
+              <div class="table-responsive">
+                <table class="table table-sm table-striped mb-0">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Day</th><th>Hours</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Mon–Thu</td><td>9:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Fri</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Sat</td><td>9:00 AM – 1:00 PM</td></tr>
+                    <tr><td>Sun</td><td>Closed</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="small text-muted mt-2 mb-0">* Pool hours vary by schedule. Please check the Lessons page.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">&copy; 2025 Splashes Swim School. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal: Register / Sign In -->
+  <div class="modal fade" id="authModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register / Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="authForm">
+            <div class="form-group">
+              <label for="emailAuth">Email:</label>
+              <input type="email" id="emailAuth" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="passwordAuth">Password:</label>
+              <input type="password" id="passwordAuth" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vue-component.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // 简单前端校验 + Ajax + mailto 回退
+    (function() {
+      const $form = $('#contactForm');
+      const $alert = $('#formAlert');
+      const $mailto = $('#mailtoFallback');
+
+      function showAlert(type, msg){
+        $alert.removeClass('d-none alert-success alert-danger').addClass('alert-'+type).text(msg);
+      }
+
+      function validate(){
+        let valid = true;
+        $form.find('[required]').each(function(){
+          if(!this.checkValidity()) { valid = false; $(this).addClass('is-invalid'); }
+          else { $(this).removeClass('is-invalid'); }
+        });
+        // 简单邮箱格式再检一次（可根据需要加强）
+        const email = $('#email').val().trim();
+        if(!/^\S+@\S+\.\S+$/.test(email)){ valid=false; $('#email').addClass('is-invalid'); }
+        return valid;
+      }
+
+      function buildMailto(){
+        const to = 'hello@splashes.school';
+        const subject = encodeURIComponent($('#subject').val() || 'Contact Request');
+        const bodyLines = [
+          'Name: ' + ($('#name').val()||''),
+          'Email: ' + ($('#email').val()||''),
+          'Phone: ' + ($('#phone').val()||''),
+          'Has Fabric: ' + ($('#hasFabric').val()||'Unknown'),
+          '',
+          'Message:',
+          ($('#message').val()||'')
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        return `mailto:${to}?subject=${subject}&body=${body}`;
+      }
+
+      $form.on('submit', function(e){
+        e.preventDefault();
+        $alert.addClass('d-none');
+        $mailto.hide();
+
+        // 蜜罐：若被填则拒绝提交
+        if ($('input[name="website"]').val()) {
+          showAlert('danger', 'Submission blocked.');
+          return;
+        }
+
+        if(!validate()){
+          showAlert('danger', 'Please complete required fields correctly.');
+          return;
+        }
+
+        // 文件大小与类型简单检查（可选）
+        const file = $('#photo')[0].files[0];
+        if (file) {
+          const okTypes = ['image/jpeg','image/png'];
+          if (!okTypes.includes(file.type) || file.size > 5*1024*1024) {
+            showAlert('danger', 'Photo must be JPG/PNG and ≤ 5MB.');
+            return;
+          }
+        }
+
+        // Ajax 提交（需要后端 /api/contact 支持）
+        const formData = new FormData($form[0]);
+        fetch('/api/contact', { method: 'POST', body: formData })
+          .then(res => {
+            if(!res.ok) throw new Error('Network response was not ok');
+            return res.json().catch(()=>({ok:true}));
+          })
+          .then(() => {
+            showAlert('success', 'Thanks! Your request has been sent.');
+            $form[0].reset();
+          })
+          .catch(() => {
+            // 没有后端 -> mailto 回退
+            const href = buildMailto();
+            $mailto.attr('href', href).show();
+            showAlert('danger', 'Server not available. Click "Use Email App" to send via your mail client.');
+          });
+      });
+
+      // 即时移除错误样式
+      $form.on('input change', '[required]', function(){ $(this).removeClass('is-invalid'); });
+    })();
+  </script>
+</body>
+</html>
+

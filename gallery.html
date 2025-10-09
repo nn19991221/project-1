@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Splashes photo gallery – see our classes and happy swimmers!"/>
+  <title>Gallery | Splashes Swim School</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* 可放到 css/style.css，写在此处方便直接预览 */
+    .page-hero {
+      position: relative;
+      min-height: 40vh;
+      background: url("images/hero-gallery.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+
+    .filter-btns .btn { margin: 0 .25rem .5rem; }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: .5rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      cursor: pointer;
+    }
+    .gallery-card img {
+      width: 100%; height: 220px; object-fit: cover;
+      transition: transform .4s ease;
+      display: block;
+    }
+    .gallery-card:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute; left:0; right:0; bottom:0;
+      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+      color: #fff; padding: .75rem .9rem;
+    }
+    .badge-level { font-weight: 600; }
+    .d-none-important { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Splashes Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Lessons</a></li>
+          <li class="nav-item active"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn btn-primary ml-3" data-toggle="modal" data-target="#authModal">Register / Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class="display-4 font-weight-bold">Gallery</h1>
+      <p class="lead mb-0">Happy moments from our classes and events</p>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="py-4">
+    <div class="container">
+      <div class="text-center filter-btns">
+        <button class="btn btn-outline-primary active" data-filter="all">All</button>
+        <button class="btn btn-outline-primary" data-filter="baby">Baby</button>
+        <button class="btn btn-outline-primary" data-filter="beginner">Beginner</button>
+        <button class="btn btn-outline-primary" data-filter="intermediate">Intermediate</button>
+        <button class="btn btn-outline-primary" data-filter="advanced">Advanced</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="row" id="galleryGrid">
+        <!-- 示例卡片：请将图片放到 images/gallery/ 目录 -->
+        <!-- Baby -->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="baby">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/baby-01.jpg"
+               data-title="Baby & Me — Water Familiarization"
+               data-caption="Warm pool time with parents and infants (6–18 months).">
+            <img src="images/gallery/baby-01.jpg" alt="Baby & Me class">
+            <div class="gallery-overlay">
+              <span class="badge badge-info badge-level">Baby</span>
+              <div>Water Familiarization</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="baby">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/baby-02.jpg"
+               data-title="Baby & Me — First Splash"
+               data-caption="Songs and gentle movements to build comfort.">
+            <img src="images/gallery/baby-02.jpg" alt="Baby class">
+            <div class="gallery-overlay">
+              <span class="badge badge-info badge-level">Baby</span>
+              <div>First Splash</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beginner -->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="beginner">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/beginner-01.jpg"
+               data-title="Beginner — Bubbles & Kicks"
+               data-caption="Safety-first fundamentals for ages 3–6.">
+            <img src="images/gallery/beginner-01.jpg" alt="Beginner kids">
+            <div class="gallery-overlay">
+              <span class="badge badge-success badge-level">Beginner</span>
+              <div>Bubbles & Kicks</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="beginner">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/beginner-02.jpg"
+               data-title="Beginner — Float Time"
+               data-caption="Front & back float practice with coaches.">
+            <img src="images/gallery/beginner-02.jpg" alt="Beginner float">
+            <div class="gallery-overlay">
+              <span class="badge badge-success badge-level">Beginner</span>
+              <div>Float Time</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intermediate -->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="intermediate">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/intermediate-01.jpg"
+               data-title="Intermediate — Freestyle Basics"
+               data-caption="Side breathing and stroke foundations.">
+            <img src="images/gallery/intermediate-01.jpg" alt="Intermediate class">
+            <div class="gallery-overlay">
+              <span class="badge badge-warning badge-level">Intermediate</span>
+              <div>Freestyle Basics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="intermediate">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/intermediate-02.jpg"
+               data-title="Intermediate — Backstroke Practice"
+               data-caption="Improving balance and body position.">
+            <img src="images/gallery/intermediate-02.jpg" alt="Backstroke practice">
+            <div class="gallery-overlay">
+              <span class="badge badge-warning badge-level">Intermediate</span>
+              <div>Backstroke Practice</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced -->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="advanced">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/advanced-01.jpg"
+               data-title="Advanced — Starts & Turns"
+               data-caption="Building speed and efficiency for meets.">
+            <img src="images/gallery/advanced-01.jpg" alt="Advanced starts">
+            <div class="gallery-overlay">
+              <span class="badge badge-primary badge-level">Advanced</span>
+              <div>Starts & Turns</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="advanced">
+          <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
+               data-img="images/gallery/advanced-02.jpg"
+               data-title="Advanced — Team Session"
+               data-caption="Endurance sets with coach feedback.">
+            <img src="images/gallery/advanced-02.jpg" alt="Advanced team">
+            <div class="gallery-overlay">
+              <span class="badge badge-primary badge-level">Advanced</span>
+              <div>Team Session</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">&copy; 2025 Splashes Swim School. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal: Lightbox -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img id="lightboxImage" src="" alt="" style="width:100%; height:auto; display:block;">
+        </div>
+        <div class="modal-footer d-block text-left">
+          <h5 id="lightboxTitle" class="mb-1">Image Title</h5>
+          <p id="lightboxCaption" class="mb-0 text-muted">Caption text goes here.</p>
+          <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Register / Sign In（与其他页一致） -->
+  <div class="modal fade" id="authModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register / Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="authForm">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vue-component.js"></script>
+  <script src="js/main.js"></script>  
+  <script>
+    // 过滤按钮
+    $('.filter-btns .btn').on('click', function() {
+      $('.filter-btns .btn').removeClass('active');
+      $(this).addClass('active');
+
+      const filter = $(this).data('filter');
+      const $items = $('#galleryGrid .gallery-item');
+
+      if (filter === 'all') {
+        $items.removeClass('d-none-important');
+      } else {
+        $items.each(function() {
+          const level = $(this).data('level');
+          $(this).toggleClass('d-none-important', level !== filter);
+        });
+      }
+    });
+
+    // 轻量灯箱：把卡片上的 data-* 填到 Modal
+    $('#galleryGrid').on('click', '.gallery-card', function() {
+      const img = $(this).data('img');
+      const title = $(this).data('title') || 'Image';
+      const caption = $(this).data('caption') || '';
+
+      $('#lightboxImage').attr('src', img).attr('alt', title);
+      $('#lightboxTitle').text(title);
+      $('#lightboxCaption').text(caption);
+    });
+  </script>
+</body>
+</html>

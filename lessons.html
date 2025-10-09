@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Splashes swimming lesson levels, pricing, and schedules."/>
+  <title>Lessons | Splashes Swim School</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Splashes Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item active"><a class="nav-link" href="lessons.html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn btn-primary ml-3" data-toggle="modal" data-target="#authModal">Register / Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero text-white d-flex align-items-center justify-content-center">
+    <div class="overlay"></div>
+    <div class="container text-center">
+      <h1 class="display-4 font-weight-bold">Lessons & Programs</h1>
+      <p class="lead">From first splash to advanced strokes—there’s a class for every child.</p>
+    </div>
+  </header>
+
+  <!-- Levels -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Lesson Levels</h2>
+      <div class="row">
+        <!-- Baby & Me -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/level-baby.jpg" class="card-img-top" alt="Baby & Me">
+            <div class="card-body">
+              <h5 class="card-title">Baby & Me (6–18 mo)</h5>
+              <p class="card-text">Parent-participation class focusing on water familiarity, comfort, and fun songs.</p>
+              <ul class="mb-0">
+                <li>Max 8 families</li>
+                <li>30 mins / class</li>
+                <li>Water acclimation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Beginner -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/level-beginner.jpg" class="card-img-top" alt="Beginner">
+            <div class="card-body">
+              <h5 class="card-title">Beginner (3–6 yrs)</h5>
+              <p class="card-text">Kick, float, bubbles—build confidence with safety-first fundamentals.</p>
+              <ul class="mb-0">
+                <li>Max 6 students</li>
+                <li>30–40 mins</li>
+                <li>Front/back float</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Intermediate -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/level-intermediate.jpg" class="card-img-top" alt="Intermediate">
+            <div class="card-body">
+              <h5 class="card-title">Intermediate (6–9 yrs)</h5>
+              <p class="card-text">Stroke foundations: freestyle, backstroke, breathing, and endurance.</p>
+              <ul class="mb-0">
+                <li>Max 6 students</li>
+                <li>40 mins</li>
+                <li>Side breathing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Advanced -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/level-advanced.jpg" class="card-img-top" alt="Advanced">
+            <div class="card-body">
+              <h5 class="card-title">Advanced (9–12 yrs)</h5>
+              <p class="card-text">Refine strokes, starts & turns; prepare for meets and club tryouts.</p>
+              <ul class="mb-0">
+                <li>Max 8 students</li>
+                <li>45–60 mins</li>
+                <li>Starts & turns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- Pricing Table -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Pricing</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th>Program</th>
+              <th>Age</th>
+              <th>Duration</th>
+              <th>Class Size</th>
+              <th>Price / 4 classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baby & Me</td>
+              <td>6–18 mo</td>
+              <td>30 mins</td>
+              <td>Up to 8 families</td>
+              <td>$120</td>
+            </tr>
+            <tr>
+              <td>Beginner</td>
+              <td>3–6 yrs</td>
+              <td>30–40 mins</td>
+              <td>Up to 6</td>
+              <td>$140</td>
+            </tr>
+            <tr>
+              <td>Intermediate</td>
+              <td>6–9 yrs</td>
+              <td>40 mins</td>
+              <td>Up to 6</td>
+              <td>$160</td>
+            </tr>
+            <tr>
+              <td>Advanced</td>
+              <td>9–12 yrs</td>
+              <td>45–60 mins</td>
+              <td>Up to 8</td>
+              <td>$180</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted small">* Prices may vary by location and schedule. Taxes/fees may apply.</p>
+    </div>
+  </section>
+
+  <!-- Schedule Table -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Weekly Schedule (Sample)</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Level</th>
+              <th>Pool</th>
+              <th>Coach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mon</td>
+              <td>4:00–4:40 PM</td>
+              <td>Beginner</td>
+              <td>Indoor A</td>
+              <td>Emily</td>
+            </tr>
+            <tr>
+              <td>Tue</td>
+              <td>5:00–5:45 PM</td>
+              <td>Intermediate</td>
+              <td>Indoor B</td>
+              <td>Daniel</td>
+            </tr>
+            <tr>
+              <td>Wed</td>
+              <td>4:30–5:10 PM</td>
+              <td>Baby & Me</td>
+              <td>Warm Pool</td>
+              <td>Mia</td>
+            </tr>
+            <tr>
+              <td>Thu</td>
+              <td>6:00–7:00 PM</td>
+              <td>Advanced</td>
+              <td>Competition</td>
+              <td>Daniel</td>
+            </tr>
+            <tr>
+              <td>Sat</td>
+              <td>9:00–9:40 AM</td>
+              <td>Beginner</td>
+              <td>Indoor A</td>
+              <td>Emily</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Ajax Loader -->
+      <div class="text-center mt-5">
+        <h3>Upcoming Sessions</h3>
+        <p class="text-muted">Click to load the latest sessions via Ajax.</p>
+        <button id="loadSessionsBtn" class="btn btn-outline-primary">Load Upcoming Sessions</button>
+        <div id="sessionsBox" class="mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQ</h2>
+      <div class="accordion" id="faq">
+        <div class="card">
+          <div class="card-header" id="q1">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#a1" aria-expanded="true" aria-controls="a1">
+                What should my child bring?
+              </button>
+            </h2>
+          </div>
+          <div id="a1" class="collapse show" aria-labelledby="q1" data-parent="#faq">
+            <div class="card-body">
+              Swimsuit, towel, goggles (optional), and a water bottle. Swim diapers for babies/toddlers.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="q2">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#a2" aria-expanded="false" aria-controls="a2">
+                How do I choose the right level?
+              </button>
+            </h2>
+          </div>
+          <div id="a2" class="collapse" aria-labelledby="q2" data-parent="#faq">
+            <div class="card-body">
+              Start with age guidance and skills listed above; contact us for a quick assessment if unsure.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="q3">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#a3" aria-expanded="false" aria-controls="a3">
+                Are make-up classes available?
+              </button>
+            </h2>
+          </div>
+          <div id="a3" class="collapse" aria-labelledby="q3" data-parent="#faq">
+            <div class="card-body">
+              We offer limited make-up classes with advance notice—please check our policy at the front desk.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2>Ready to Enroll?</h2>
+      <p>Join a class today and help your child grow strong and confident in the water.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">&copy; 2025 Splashes Swim School. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal: Register / Sign In -->
+  <div class="modal fade" id="authModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register / Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="authForm">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vue-component.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Page JS -->
+  <script>
+    // Ajax: load upcoming sessions into #sessionsBox
+    // 请在项目中创建: /partials/sessions.html 作为数据片段
+    // 示例 sessions.html 内容可为一个 <ul> 列表或小表格
+    $('#loadSessionsBtn').on('click', function() {
+      $('#sessionsBox').html('<p class="text-muted">Loading sessions...</p>');
+      $('#sessionsBox').load('partials/sessions.html', function(response, status) {
+        if (status !== 'success') {
+          $('#sessionsBox').html('<div class="alert alert-warning">Unable to load sessions right now.</div>');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Splashes – Professional swimming lessons for children">
+  <meta name="keywords" content="Swimming, Lessons, Kids, Water Safety, Splashes">
+  <title>Splashes | Kids Swimming Lessons</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Splashes Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn btn-primary ml-3" data-toggle="modal" data-target="#authModal">Register / Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero d-flex align-items-center justify-content-center text-center text-white">
+    <div class="container">
+      <h1 class="display-4 font-weight-bold">Make a Splash with Confidence!</h1>
+      <p class="lead">Fun and safe swimming lessons for kids of all ages</p>
+      <a href="lessons.html" class="btn btn-light btn-lg mt-3">View Classes</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="py-5 text-center" id="about">
+    <div class="container">
+      <h2>Welcome to Splashes</h2>
+      <p class="mt-3">
+        At Splashes, we believe every child deserves to learn swimming in a safe, supportive, and enjoyable environment.
+        Our certified instructors make learning fun while helping your child build confidence in the water.
+      </p>
+      <img src="images/kids-swimming.jpg" class="img-fluid rounded mt-4" alt="Kids swimming in pool">
+    </div>
+  </section>
+
+  <!-- Vue Component Section (Placeholder) -->
+  <section class="bg-light py-5" id="reviews">
+    <div class="container text-center">
+      <h2>What Parents Say</h2>
+      <div id="vue-app">
+        <!-- Vue component will render here -->
+        <review-list></review-list>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2>Ready to Dive In?</h2>
+      <p>Contact us today to schedule your child’s first class!</p>
+      <a href="contact.html" class="btn btn-primary mt-2">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">&copy; 2025 Splashes Swim School. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal: Register / Sign In -->
+  <div class="modal fade" id="authModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register / Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="authForm">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vue-component.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Vue Component Example -->
+  <script>
+    Vue.component('review-list', {
+      template: `
+        <div>
+          <p>"My daughter loves her swimming class!" – Sarah M.</p>
+          <p>"Great instructors and fun environment." – David K.</p>
+        </div>
+      `
+    });
+
+    new Vue({ el: '#vue-app' });
+  </script>
+</body>
+</html>
