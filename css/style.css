@@ -60,3 +60,7 @@ footer { font-size:.95rem; }
   .display-4 { font-size: 2rem; }
   body { padding-top: 64px; }
 }
+.navbar-brand img {
+  height: 60px;
+  width: auto;  /* 自动等比例缩放 */
+}
