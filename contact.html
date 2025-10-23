@@ -49,12 +49,17 @@
   </nav>
 
   <!-- Hero -->
-  <header class="page-hero d-flex align-items-center">
-    <div class="container text-center">
+  <!-- Hero -->
+  <header class="page-hero d-flex align-items-center text-white" 
+          style="background:url('images/summer-swim-camps.jpeg') center/cover no-repeat; position:relative; min-height:50vh;">
+    <div class="overlay" 
+         style="content:''; position:absolute; inset:0; background:rgba(0,0,0,0.45); z-index:0;"></div>
+    <div class="container text-center position-relative" style="z-index:1;">
       <h1 class="display-4 font-weight-bold">Contact Us</h1>
       <p class="lead mb-0">Questions about classes, schedules, or enrollment? We’re here to help.</p>
     </div>
   </header>
+
 
   <!-- Content -->
   <main class="py-5">
@@ -95,7 +100,7 @@
                     <div class="invalid-feedback">Please enter your phone.</div>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="hasFabric">Do you have fabric?</label>
+                    <label for="hasFabric">Do you or your child have swimming experience?</label>
                     <select id="hasFabric" name="hasFabric" class="form-control">
                       <option value="Unknown" selected>Not sure</option>
                       <option value="Yes">Yes</option>

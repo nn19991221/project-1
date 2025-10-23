@@ -76,12 +76,17 @@
   </nav>
 
   <!-- Page Hero -->
-  <header class="page-hero d-flex align-items-center">
-    <div class="container text-center">
+  <!-- Page Hero -->
+  <header class="page-hero d-flex align-items-center justify-content-center text-white"
+          style="background: url('images/which-lesson-is-best.jpeg') center/cover no-repeat; position: relative; min-height: 50vh;">
+    <div class="overlay" 
+         style="content:''; position:absolute; inset:0; background:rgba(0,0,0,0.45); z-index:0;"></div>
+    <div class="container text-center position-relative" style="z-index:1;">
       <h1 class="display-4 font-weight-bold">Gallery</h1>
       <p class="lead mb-0">Happy moments from our classes and events</p>
     </div>
   </header>
+
 
   <!-- Filters -->
   <section class="py-4">
@@ -104,10 +109,10 @@
         <!-- Baby -->
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="baby">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/baby-01.jpg"
+               data-img="images\gallery\1.jpg"
                data-title="Baby & Me — Water Familiarization"
                data-caption="Warm pool time with parents and infants (6–18 months).">
-            <img src="images/gallery/baby-01.jpg" alt="Baby & Me class">
+            <img src="images\gallery\1.jpg" alt="Baby & Me class">
             <div class="gallery-overlay">
               <span class="badge badge-info badge-level">Baby</span>
               <div>Water Familiarization</div>
@@ -117,10 +122,10 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="baby">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/baby-02.jpg"
+               data-img="images\gallery\2.jpg"
                data-title="Baby & Me — First Splash"
                data-caption="Songs and gentle movements to build comfort.">
-            <img src="images/gallery/baby-02.jpg" alt="Baby class">
+            <img src="images\gallery\2.jpg" alt="Baby class">
             <div class="gallery-overlay">
               <span class="badge badge-info badge-level">Baby</span>
               <div>First Splash</div>
@@ -131,10 +136,10 @@
         <!-- Beginner -->
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="beginner">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/beginner-01.jpg"
+               data-img="images\gallery\3.jpg"
                data-title="Beginner — Bubbles & Kicks"
                data-caption="Safety-first fundamentals for ages 3–6.">
-            <img src="images/gallery/beginner-01.jpg" alt="Beginner kids">
+            <img src="images\gallery\3.jpg" alt="Beginner kids">
             <div class="gallery-overlay">
               <span class="badge badge-success badge-level">Beginner</span>
               <div>Bubbles & Kicks</div>
@@ -144,10 +149,10 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="beginner">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/beginner-02.jpg"
+               data-img="images\gallery\4.jpg"
                data-title="Beginner — Float Time"
                data-caption="Front & back float practice with coaches.">
-            <img src="images/gallery/beginner-02.jpg" alt="Beginner float">
+            <img src="images\gallery\4.jpg" alt="Beginner float">
             <div class="gallery-overlay">
               <span class="badge badge-success badge-level">Beginner</span>
               <div>Float Time</div>
@@ -158,10 +163,10 @@
         <!-- Intermediate -->
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="intermediate">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/intermediate-01.jpg"
+               data-img="images\gallery\5.jpg"
                data-title="Intermediate — Freestyle Basics"
                data-caption="Side breathing and stroke foundations.">
-            <img src="images/gallery/intermediate-01.jpg" alt="Intermediate class">
+            <img src="images\gallery\5.jpg" alt="Intermediate class">
             <div class="gallery-overlay">
               <span class="badge badge-warning badge-level">Intermediate</span>
               <div>Freestyle Basics</div>
@@ -171,10 +176,10 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="intermediate">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/intermediate-02.jpg"
+               data-img="images\gallery\6.jpg"
                data-title="Intermediate — Backstroke Practice"
                data-caption="Improving balance and body position.">
-            <img src="images/gallery/intermediate-02.jpg" alt="Backstroke practice">
+            <img src="images\gallery\6.jpg" alt="Backstroke practice">
             <div class="gallery-overlay">
               <span class="badge badge-warning badge-level">Intermediate</span>
               <div>Backstroke Practice</div>
@@ -185,10 +190,10 @@
         <!-- Advanced -->
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="advanced">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/advanced-01.jpg"
+               data-img="images\gallery\7.png"
                data-title="Advanced — Starts & Turns"
                data-caption="Building speed and efficiency for meets.">
-            <img src="images/gallery/advanced-01.jpg" alt="Advanced starts">
+            <img src="images\gallery\7.png" alt="Advanced starts">
             <div class="gallery-overlay">
               <span class="badge badge-primary badge-level">Advanced</span>
               <div>Starts & Turns</div>
@@ -198,10 +203,10 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 gallery-item" data-level="advanced">
           <div class="gallery-card" data-toggle="modal" data-target="#lightboxModal"
-               data-img="images/gallery/advanced-02.jpg"
+               data-img="images\gallery\8.png"
                data-title="Advanced — Team Session"
                data-caption="Endurance sets with coach feedback.">
-            <img src="images/gallery/advanced-02.jpg" alt="Advanced team">
+            <img src="images\gallery\8.png" alt="Advanced team">
             <div class="gallery-overlay">
               <span class="badge badge-primary badge-level">Advanced</span>
               <div>Team Session</div>

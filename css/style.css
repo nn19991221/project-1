@@ -64,3 +64,29 @@ footer { font-size:.95rem; }
   height: 60px;
   width: auto;  /* 自动等比例缩放 */
 }
+/*赞助商图片交互效果*/
+#sponsors img {
+  max-height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+#sponsors img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+/*荣誉图片交互效果*/
+#awards img {
+  transition: transform 0.3s ease;
+}
+#awards img:hover {
+  transform: scale(1.05);
+}
+/*招聘图片交互效果*/
+#hiring img {
+  max-width: 900px;
+  transition: transform 0.3s ease;
+}
+#hiring img:hover {
+  transform: scale(1.02);
+}
